@@ -6,13 +6,13 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
-
+import PropTypes from 'prop-types'
 const {width, height, scale} = require('Dimensions').get('window');
 
 
-export default class Button extends Component {
-    static navigationOptions = ({navigation, screenProps}) => ({
-        headerTitle: 'Button',
+export default class Toast extends Component {
+    static navigationOptions = () => ({
+        headerTitle: 'Toast',
         headerRight: <View/>,
         gesturesEnabled: true,
         headerTitleStyle: styles.titleBar
@@ -21,6 +21,9 @@ export default class Button extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <Text>
+                    I'm Toast
+                </Text>
             </View>
         );
     }

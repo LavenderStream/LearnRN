@@ -4,16 +4,16 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, View, ScrollView, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, ScrollView} from 'react-native';
 
 import Button from 'react-native-button';
 import Constants from '../../utils/Constans';
 
-const {width, height, scale} = require('Dimensions').get('window');
+const {width} = require('Dimensions').get('window');
 
 export default class Main extends Component {
 
-    static navigationOptions = ({navigation, screenProps}) => ({
+    static navigationOptions = () => ({
         headerTitle: 'Components',
         headerTitleStyle: styles.titleBar
     });
@@ -22,24 +22,19 @@ export default class Main extends Component {
         return (
             <ScrollView style={styles.container}>
                 {this.renderItem()}
-                <Text>
-                    add
-                </Text>
             </ScrollView>
         );
     }
 
     renderItem() {
         let itemAry = [];
-        let colorAry = ['gray', 'green', 'blue', 'yellow', 'black', 'orange', "red", "pink"];
-        for (let i = 0; i < colorAry.length; i++) {
-            let content = Constants[i] ? Constants[i] : colorAry[i];
+        for (let i = 0; i < Constants.length; i++) {
             itemAry.push(
                 <Button key={i}
-                        style={[styles.item, {backgroundColor: colorAry[i]}]}
+                        style={[styles.item, {backgroundColor: Constants[i].color}]}
                         activeOpacity={1}
-                        onPress={e => this.onClick(i)}>
-                    {content}
+                        onPress={e => this.onClick(Constants[i].name)}>
+                    {Constants[i].name}
                 </Button>
             );
         }
@@ -47,8 +42,7 @@ export default class Main extends Component {
     }
 
     onClick = (e) => {
-        console.log("haha: " + e);
-        this.props.navigation.navigate('Button');
+        this.props.navigation.navigate(e);
     }
 }
 

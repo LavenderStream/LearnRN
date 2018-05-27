@@ -9,7 +9,7 @@ import { YellowBox } from 'react-native';
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
 
-import ApplicationManifest from './app/view/ApplicationManifest.js'
+import ApplicationManifest from './app/view/NativeManifest'
 
 export default class App extends Component {
   render() {
