@@ -5,18 +5,16 @@ import getSlideFromRightTransition from 'react-navigation-slide-from-right-trans
 import Main from './main/Main';
 import Button from './button/Button';
 import Toast from "./toast/Toast";
+import Camera from './camera/Camera';
+import Splash from './splash/Splash'
 
 
 export default ApplicationManifest = createStackNavigator({
-        Main: {
-            screen: Main
-        },
-        Button: {
-            screen: Button
-        },
-        Toast: {
-            screen: Toast
-        }
+        Splash: {screen: Splash},
+        Main: {screen: Main},
+        Button: {screen: Button},
+        Toast: {screen: Toast},
+        Camera: {screen: Camera}
 
     }, {
         transitionConfig: getSlideFromRightTransition

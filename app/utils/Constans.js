@@ -4,6 +4,9 @@ const components = [{
 }, {
     name: "Toast",
     color: "green"
+}, {
+    name: "Camera",
+    color: "blue"
 }
 ];
 export default components;

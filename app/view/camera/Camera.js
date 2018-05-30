@@ -11,9 +11,9 @@ import TestButton from 'react-native-button';
 const {width, height, scale} = require('Dimensions').get('window');
 
 
-export default class Button extends Component {
+export default class Camera extends Component {
     static navigationOptions = ({navigation, screenProps}) => ({
-        headerTitle: 'Button',
+        headerTitle: 'Camera',
         headerRight: <View/>,
         gesturesEnabled: true,
         headerTitleStyle: styles.titleBar
@@ -22,44 +22,11 @@ export default class Button extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TestButton
-                    style={styles.btn1}
-                    activeOpacity={1}
-                    onPress={this._handleBtn1}>
-                    red text, blue bg
-                </TestButton>
 
-                <TouchableHighlight
-                    style={styles.btn2}
-                    onLongPress={this._handleBtn2LongClick}
-                    onPressIn={this._handleBtn2PressIn}
-                    onPressOut={this._handleBtn2PressOut}
-                    underlayColor='red'>
-                    <View>
-                        <Text>
-                            Touchable
-                        </Text>
-                    </View>
-                </TouchableHighlight>
             </View>
         );
     }
 
-    _handleBtn1 = () => {
-        ToastAndroid.show("你过来啊", ToastAndroid.SHORT);
-    };
-
-    _handleBtn2LongClick = () => {
-        ToastAndroid.show("长按", ToastAndroid.SHORT);
-    };
-
-    _handleBtn2PressIn = () => {
-        ToastAndroid.show("in", ToastAndroid.SHORT);
-    };
-
-    _handleBtn2PressOut = () => {
-        ToastAndroid.show("out", ToastAndroid.SHORT);
-    };
 }
 
 const styles = StyleSheet.create({

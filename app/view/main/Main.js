@@ -4,7 +4,7 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, ScrollView} from 'react-native';
+import {StyleSheet, ScrollView, View} from 'react-native';
 
 import Button from 'react-native-button';
 import Constants from '../../utils/Constans';
@@ -15,6 +15,8 @@ export default class Main extends Component {
 
     static navigationOptions = () => ({
         headerTitle: 'Components',
+        headerRight: <View />,
+        headerLeft: <View />,
         headerTitleStyle: styles.titleBar
     });
 
